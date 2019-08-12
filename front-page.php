@@ -8,9 +8,10 @@
  *
  */
 
-$lastposts = get_posts(array(
+
+$lastproprietes = get_posts(array(
 	'numberposts' => 5,
-	'post_type' => 'proprietes',
+	'post_type' => 'propriete',
 ));
 
 get_header();
@@ -59,7 +60,7 @@ get_header();
     </div>
   <?php endif;?>
   <div class="text-center">
-    <a href="<?= esc_url( home_url( '/' ) ) ?>/proprietes/" class="btn btn-outline-primary my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
+    <a href="<?= esc_url( home_url( '/' ) ) ?>/propriete/" class="btn btn-outline-primary my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
   </div>
 </section>
 
