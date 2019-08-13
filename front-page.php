@@ -10,7 +10,7 @@
 
 
 $lastproprietes = get_posts(array(
-	'numberposts' => 5,
+	'numberposts' => 6,
 	'post_type' => 'propriete',
 ));
 
@@ -48,7 +48,12 @@ get_header();
 
 </main>
 
-<section class="front-proprietes container">
+<div class="text-center mt-5">
+	<h2>Nos proprietés</h2>
+</div>
+
+
+<section class="front-proprietes container mt-5">
   <?php if ( $lastproprietes ) : ?>
     <div class="row front-proprietes_grid">
       <?php foreach ( $lastproprietes as $post ) :

@@ -7,9 +7,8 @@ $champ_nombredechambres = get_field_object('nombre_de_chambres');
 $champ_infos = get_field_object('infos');
 ?>
 
-
-
-<article <?php post_class('card-propriete-article col-md-4'); ?>>
+<div class="col-md-4">
+<article <?php post_class('card-propriete-article card'); ?>>
   <a class="card-spot_link" href="<?php the_permalink(); ?>">
     <div class="card" style="width: 350px;">
       <figure class="card-propriete-figure mb-0">
@@ -29,3 +28,5 @@ $champ_infos = get_field_object('infos');
       </ul>
     </div>
   </a>
+</article>
+</div>

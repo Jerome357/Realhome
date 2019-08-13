@@ -19,9 +19,6 @@ get_header();
 
 			<?php if (has_post_thumbnail()) : ?>
 				<div class="row flex-md-row-reverse">
-					<div class="col-md-6 col-lg-4">
-						<?php the_post_thumbnail('thumb-510', array('class'=>'img-fluid')); ?>
-					</div>
 					<div class="col-md-6 col-lg-8">
             <?php the_content() ?>
             <?php get_template_part( 'template-parts/content', 'propriete' ) ?>
