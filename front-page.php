@@ -28,7 +28,7 @@ get_header();
 
 			<?php if (has_post_thumbnail()) : ?>
 				<div class="row flex-md-row-reverse">
-					<div class="col-md-6 col-lg-4">
+					<div class="col-md-3 col-lg-3">
 						<?php the_post_thumbnail('thumb-510', array('class'=>'img-fluid')); ?>
 					</div>
 					<div class="col-md-6 col-lg-8">
@@ -63,10 +63,6 @@ get_header();
     <a href="<?= esc_url( home_url( '/' ) ) ?>/propriete/" class="btn btn-outline-primary my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
   </div>
 </section>
-
-
-
-
 
 
 <?php get_footer() ?>
