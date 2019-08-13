@@ -1,36 +1,52 @@
 <?php
+/**
+ * The template file for archive
+ *
+ * ...
+ *
+ * @package scratch
+ *
+ */
+
 get_header();
 ?>
 
-<?php
-$champ_date = get_field_object('date');
-$champ_illustration = get_field_object('illustration');
-$champ_corps_de_texte = get_field_object('corps_de_texte');
+​
+<main class="py-5 container">
+    ​
+    <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
+    ​
+    <div class="row">
+        ​
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        ​
+        <article class="col-md-6 col-lg-4">
+            <a href="<?php the_permalink() ?>">
+                <h2 class="entry-title"><?php the_title() ?></h2>
+                <?php the_post_thumbnail('thumb-510', array('class' => 'img-fluid')); ?>
+            </a>
+            <p>
+                <?php the_excerpt() ?>
+            </p>
+        </article>
+        <?php endwhile; ?>
 
-$lastposts = get_posts(array(
-  'numberposts' => 3,
-  'post_type' => 'actualite',
-));
-?>
+        <section class="front-proprietes container">
+            <?php if ($lastposts) : ?>
+            <div class="front-proprietes_grid">
+                <?php foreach ($lastposts as $post) :
+                            setup_postdata($post);
+                            get_template_part('template-parts/content', 'actualite');
+                        endforeach;
+                        wp_reset_postdata(); ?>
+            </div>
+            <?php endif; ?>
 
-
-<article <?php post_class('card-propriete-article'); ?>>
-  <a class="card-spot_link" href="<?php the_permalink(); ?>">
-    <figure class="card-propriete-figure mb-0">
-      <?= get_the_post_thumbnail($post->ID, 'thumb-555', array('class' => 'img-fluid card-propriete_img')) ?>
-    </figure>
-    <p><?= $champ_date['label'] ?> : <strong><?= $champ_date['value'] ?> <?= $champ_prix['append'] ?></strong></p>
-    <p><?= $champ_illustration['label'] ?> : <strong><?= $champ_illustration['value'] ?> <?= $champ_illustration['append'] ?></strong></p>
-    <p><?= $champ_corps_de_texte['label'] ?> : <strong><?= $champ_corps_de_texte['value'] ?> <?= $champ_corps_de_texte['append'] ?></strong></p>
-    <div class="card-propriete_content p-3">
-      <?php foreach ($lastposts as $post) :
-        setup_postdata($post);
-      endforeach;
-      wp_reset_postdata(); ?>
-  </a>
-</article>
-
-
-  </main>
-
-  <?php get_footer() ?>
+            <?php else : ?>
+            <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+            <?php endif; ?>
+            ​
+    </div>
+</main>
+​
+<?php get_footer() ?>
