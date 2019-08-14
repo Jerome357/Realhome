@@ -60,9 +60,9 @@ add_action( 'widgets_init', 'scratch_widgets_init' );
 function scratch_widgets2_init() {
     register_sidebar(
         array (
-            'name' => __( 'sidebar-lastactualites-aside', 'scratch' ),
+            'name' => __( 'Side', 'scratch' ),
             'id' => 'sidebar-lastactualites-aside',
-            'description' => __( 'sidebar-lastactualites', 'scratch' ),
+            'description' => __( 'sidebar aside', 'scratch' ),
             'before_widget' => '<section class="widget col-md-6 col-lg-4 d-flex flex-column align-items-center">',
             'after_widget' => "</section>",
             'before_title' => '<h3 class="widget-title">',
@@ -70,5 +70,5 @@ function scratch_widgets2_init() {
         )
     );
 }
-add_action( 'widgets2_init', 'scratch_widgets_init' );
+add_action( 'widgets_init', 'scratch_widgets2_init' );
 

@@ -7,48 +7,28 @@
  * @package scratch
  *
  */
-
 get_header();
+$champ_date = get_field_object('date');
+$champ_texte = get_field_object('texte');
 ?>
-
-​
-<main class="py-5 container">
-    ​
+<main class="container">
     <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
-    ​
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        ​
-       
-        <article class="col-md-6 col-lg-4">
-            <a href="<?php the_permalink() ?>">
-                <h2 class="entry-title"><?php the_title() ?></h2>
-                <?php the_post_thumbnail('thumb-510', array('class' => 'img-fluid')); ?>
-            </a>
-            <p>
-                <?php the_excerpt() ?>
-            </p>
-        </article>
-        <?php endwhile; ?>
-        
-
-        
-        <section class="front-proprietes container">
-            <?php if ($lastposts) : ?>
-            <div class="front-proprietes_grid">
-                <?php foreach ($lastposts as $post) :
-                            setup_postdata($post);
-                            get_template_part('template-parts/content', 'actualite');
-                        endforeach;
-                        wp_reset_postdata(); ?>
-            </div>
-            <?php endif; ?>
-
+    <div class="row">
+        <div class="col-lg-9">
+            <?php if (have_posts()) : while (have_posts()) :
+                the_post(); ?>
+                <?php get_template_part('template-parts/content', 'actualite'); ?>
+            <?php endwhile; ?>
             <?php else : ?>
-            <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
-        
-    </div>    ​
-    
+        </div>
+        <div class="col-lg-3">
+            <?php dynamic_sidebar('aside-single-actualite'); ?>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <?php the_posts_pagination(); ?>
+    </div>
 </main>
-​
 <?php get_footer() ?>

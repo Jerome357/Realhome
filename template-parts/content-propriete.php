@@ -21,7 +21,7 @@ $champ_infos = get_field_object('infos');
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between">
-        <strong class=""><?= $champ_surface['value'] ?> <?= $champ_surface['append'] ?></strong>
+        <strong><?= $champ_surface['value'] ?> <?= $champ_surface['append'] ?></strong>
         <strong><?= $champ_nombredechambre['value'] ?> <?= $champ_nombredechambre['append'] ?></strong> 
         <strong><?= $champ_infos['value']?> <?= $champ_infos['append'] ?></strong>
       </li>
