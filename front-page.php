@@ -46,11 +46,17 @@ get_header();
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 	<?php endif; ?>
 
-</main>
+
 
 <div class="text-center mt-5">
 	<h2>Nos proprietés</h2>
+	<hr>
+	<p>Quisque diam lorem interdum vitaapibus vitae pede<br>
+	   Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar.</p>
 </div>
+
+
+
 
 
 <section class="front-proprietes container mt-5">
@@ -64,10 +70,8 @@ get_header();
       wp_reset_postdata(); ?>
     </div>
   <?php endif;?>
-  <div class="text-center">
-    <a href="<?= esc_url( home_url( '/' ) ) ?>/propriete/" class="btn btn-outline-primary my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
-  </div>
-</section>
 
+</section>
+</main>
 
 <?php get_footer() ?>

@@ -28,6 +28,6 @@ get_header();
             </div>
             <?php endif; ?>
     </div>
-</main>
+
 ​
 <?php get_footer() ?>

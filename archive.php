@@ -16,10 +16,9 @@ get_header();
     ​
     <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
     ​
-    <div class="row">
-        ​
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         ​
+       
         <article class="col-md-6 col-lg-4">
             <a href="<?php the_permalink() ?>">
                 <h2 class="entry-title"><?php the_title() ?></h2>
@@ -30,7 +29,9 @@ get_header();
             </p>
         </article>
         <?php endwhile; ?>
+        
 
+        
         <section class="front-proprietes container">
             <?php if ($lastposts) : ?>
             <div class="front-proprietes_grid">
@@ -45,8 +46,9 @@ get_header();
             <?php else : ?>
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
-            ​
-    </div>
+        
+    </div>    ​
+    
 </main>
 ​
 <?php get_footer() ?>
