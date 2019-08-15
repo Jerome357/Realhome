@@ -11,10 +11,11 @@ get_header();
 $champ_date = get_field_object('date');
 $champ_texte = get_field_object('texte');
 ?>
-<main class="container">
-    <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
+
+<main class="container mt-3">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-md-8">
+        <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
             <?php if (have_posts()) : while (have_posts()) :
                 the_post(); ?>
                 <?php get_template_part('template-parts/content', 'actualite'); ?>
@@ -23,8 +24,8 @@ $champ_texte = get_field_object('texte');
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
         </div>
-        <div class="col-lg-3">
-            <?php dynamic_sidebar('aside-single-actualite'); ?>
+        <div class="col-lg-3 col-md-4">
+            <?php dynamic_sidebar('sidebar-lastactualites-aside'); ?>
         </div>
     </div>
     <div class="d-flex justify-content-center my-4">
