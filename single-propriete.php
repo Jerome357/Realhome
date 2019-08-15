@@ -38,9 +38,9 @@ $ville = get_field_object('ville');
 					<?php the_post_thumbnail('thumb-255', array('class' => 'img-fluid')); ?></p>
 				</div>
 				<div class="carac_propriete mt-5">
-					<span><?= $prix['value'] ?> <?= $prix['append'] ?></span>
+					<p id="prix"><?= $prix['value'] ?> <?= $prix['append'] ?></p>
 					<hr />
-					<p><?= $ville['label'] ?> : <strong><?= $ville['value'] ?></strong></p>
+					<p><?=  $ville['label'] ?> : <strong><?= $ville['value'] ?></strong></p>
 					<p><?= $nombreDeChambres['label'] ?> : <strong><?= $nombreDeChambres['value'] ?></strong></p>
 					<p><?= $surface['label'] ?> : <strong><?= $surface['value'] ?> <?= $surface['append'] ?></strong></p>
 					<p><?= $informations['label'] ?> <strong><?= $informations['value'] ?> <?= $informations['append'] ?></strong></p>
