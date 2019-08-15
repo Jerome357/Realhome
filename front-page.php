@@ -50,8 +50,8 @@ get_header();
 
 
 	<div class="text-center mt-5">
-		<h2>Nos proprietés</h2>
-		<hr>
+		<h1>Nos proprietés</h1>
+		<hr width="25%" color="red">
 		<p>Quisque diam lorem interdum vitaapibus vitae pede<br>
 			Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar.</p>
 	</div>
@@ -70,7 +70,7 @@ get_header();
 		</div>
 		<?php endif; ?>
 		<div class="text-center">
-			<a href="<?= esc_url(home_url('/')) ?>/propriete/" class="btn btn-outline-primary my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
+			<a href="<?= esc_url(home_url('/')) ?>/propriete/" class="btn btn-outline-danger my-5"><?php _e('Toutes nos propriétés', 'scratch'); ?></a>
 		</div>
 	</section>
 </main>

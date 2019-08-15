@@ -7,7 +7,7 @@
 
 $lastspots = get_posts(array(
     'numberposts' => 2,
-    'post_type' => 'actualites',
+    'post_type' => 'actualite',
     'orderby' => 'rand',
     'exclude' => get_the_ID()
 ));

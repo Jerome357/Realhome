@@ -50,8 +50,8 @@ function scratch_widgets_init() {
             'description' => __( 'Custom Sidebar', 'scratch' ),
             'before_widget' => '<section class="widget col-md-6 col-lg-4 d-flex flex-column align-items-center">',
             'after_widget' => "</section>",
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
         )
     );
 }
@@ -63,7 +63,7 @@ function scratch_widgets2_init() {
             'name' => __( 'Side', 'scratch' ),
             'id' => 'sidebar-lastactualites-aside',
             'description' => __( 'sidebar aside', 'scratch' ),
-            'before_widget' => '<section class="widget col-md-6 col-lg-4 d-flex flex-column align-items-center">',
+            'before_widget' => '<section class="widget">',
             'after_widget' => "</section>",
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
