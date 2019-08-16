@@ -5,6 +5,10 @@ nav{
   margin: auto;
 }
 
+#menu-main-menu>li{
+  padding-right: 45px;
+}
+
 .navbar-brand {
   width: 180px;
 }
@@ -19,6 +23,7 @@ nav{
   .menu-item{
     margin: 15px;
     font-size: 0;
+    flex: space-between;
     a::before{
       content: '\f081';
       font-family: 'ForkAwesome';
@@ -35,3 +40,8 @@ nav{
     }
   }
 }
+
+a:hover {
+  background-color:rgba(14, 14, 202, 0.091)
+}
+

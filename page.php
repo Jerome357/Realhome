@@ -21,7 +21,7 @@ get_header();
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<article class="container my-5">
+	<article class="container mt-5">
 		<h1 class="entry-title">
 			<?php the_title(); ?>
 		</h1>

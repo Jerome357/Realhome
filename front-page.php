@@ -60,7 +60,7 @@ get_header();
 
 	<section class="front-proprietes container mt-5">
 		<?php if ($lastproprietes) : ?>
-		<div class="row front-proprietes_grid">
+		<div class="row front-proprietes_grid col-lg-12 col-md-10 col-sm-6">
 			<?php foreach ($lastproprietes as $post) :
 					setup_postdata($post);
 					get_template_part('template-parts/content', 'propriete');

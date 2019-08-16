@@ -15,20 +15,22 @@ $champ_corps_de_texte = get_field_object('corps_de_texte');
 
 get_header();
 ?>
-<div class="container my-5">
-	<div class="row">
+	<div class="d-flex justify-content-between mt-5">
 		<div class="col-md-8">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article class="container">
-				<h1 class="entry-title bg-spot">
+				<h1 class="entry-title bg-spot my-3">
 					<?php the_title(); ?>
 				</h1>
+				<div class="my-5">
+				<?= $champ_date[''] ?><strong><?= $champ_date['value'] ?>
+				</div>
 				<?php if (has_post_thumbnail()) : ?>
 				<figure>
 					<?= get_the_post_thumbnail($post->ID, 'thumb-1000', array('class' => 'img-fluid card-propriete_img')) ?>
 				</figure>
 				<?php the_content() ?>
-				<?= $champ_corps_de_texte[''] ?><strong><?= $champ_corps_de_texte['value'] ?>
+				<?= $champ_corps_de_texte[''] ?><?= $champ_corps_de_texte['value'] ?>
 					<?php else : ?>
 					<?php the_content() ?>
 					<?php endif; ?>
@@ -39,7 +41,7 @@ get_header();
             <?php dynamic_sidebar('sidebar-lastactualites-aside'); ?>
         </div>
 	</div>
-</div>
+
 
 <?php else : ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
